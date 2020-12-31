@@ -1,0 +1,14 @@
+#titulo{
+    color:white;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: solid;
+  
+}
+
+    
+#titulo p{
+    margin-left: 10px;
+    font-size: 30px;
+}

@@ -7,6 +7,11 @@
     margin-right: auto;
     margin-top:50px;
     border-radius: 6px;
+    border-color: rgb(255, 255, 255);
+   
+    border: 3px solid white;
+    padding-top: 60px;
+
     
 }
 
@@ -19,6 +24,7 @@
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+   
 
 }
 #capaSup #capaInf #textFill{

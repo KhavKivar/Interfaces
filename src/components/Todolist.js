@@ -9,24 +9,23 @@ import TextField from '@material-ui/core/TextField';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 
-import { Create, Done,Add} from "@material-ui/icons";
+import { Done,Add} from "@material-ui/icons";
 
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import IconButton from '@material-ui/core/IconButton';
 
 
-import { green, pink } from '@material-ui/core/colors';
-import FolderIcon from '@material-ui/icons/Folder';
-import { createSvgIcon } from "@material-ui/core";
+import { green} from '@material-ui/core/colors';
 
+import {ThemeProvider } from "@material-ui/core";
 
+import { createMuiTheme} from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -38,14 +37,37 @@ const styles = theme => ({
       },
     },
     pink: {
-      color: theme.palette.getContrastText(pink[500]),
-      backgroundColor: pink[500],
+        '&:hover': {
+            backgroundColor: "#c51162",
+            color: '#FFF'
+        },
+
+      color: theme.palette.getContrastText("#f50057"),
+      backgroundColor: "#f50057",
     },
     green: {
       color: '#fff',
       backgroundColor: green[500],
     },
   });
+
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Oxygen',
+        'sans-serif',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+      ].join(','),
+    },
+  });
+
 
 
 
@@ -54,6 +76,7 @@ class Todolist extends Component{
     constructor(props){
         super(props);
         this.addItem = this.addItem.bind(this);
+        this.removeItem = this.removeItem.bind(this);
         this.state = {
             items:[],
             text:""
@@ -65,7 +88,7 @@ class Todolist extends Component{
 
     addItem(e){
         e.preventDefault();
-        if(this.state.text != ""){
+        if(this.state.text !== ""){
 
             const newL = [this.state.text,...this.state.items]
             this.setState({
@@ -73,6 +96,20 @@ class Todolist extends Component{
                 text :""
             })
      }
+    }
+
+    removeItem(e){
+       
+        let index = this.state.items.indexOf(e);
+        console.log(index);
+        const L = this.state.items;
+        L.splice(index,1);
+        this.setState({
+            text : this.state.text,
+            items:L
+        })
+       
+
     }
 
 
@@ -83,6 +120,15 @@ class Todolist extends Component{
         })
     }
 
+    _handleKeyDown = (e) => {
+        if (e.key === 'Enter' && this.state.text !== "") {
+            const newL = [this.state.text,...this.state.items]
+            this.setState({
+                items:newL,
+                text :""
+            })
+        }
+      }
 
 
     render(){
@@ -93,32 +139,37 @@ class Todolist extends Component{
             <div id = "capaSup">
                 <div id="capaInf">
                     <div id = "textFill">
-                            <TextField  
+                            <TextField   onKeyDown={this._handleKeyDown} 
                              style = {{width: 430}}
                             name = "text"
                             value = {this.state.text}
                             onChange = {this.handleChange}
-                            id="outlined-basic" label="Ingrese Tarea" variant="outlined"
-                                InputProps={{
+                            id="outlined-basic"
+                             label="Tarea" 
+                             variant="outlined"
+                            InputLabelProps = {{color:'secondary' }}
+        
+
+                             InputProps={{
                                     style:{background:"white"},
                                 }}
                             />
-                           
-                                <Button className = {classes.pink}  onClick = {this.addItem}>
+
+                       
+                                <Button style = {{marginLeft:3}} className = {classes.pink}  onClick = {this.addItem}>
                              <Add  size = "medium"
                                 ></Add>
                              </Button>
-                            
-                     
+                      
                          
 
 
 
                     </div>
                     <div id = "listItem">
-                        <List dense={this.state.items} disablePadding = "true">
+                        <List disablePadding = {true}>
                         {this.state.items.map(x =>
-                            <ListItem >
+                            <ListItem   key = {x.key} disableGutters = {true}>
                             <ListItemAvatar>
                             <Avatar className={classes.pink}>
                              <AssignmentIcon />
@@ -134,8 +185,8 @@ class Todolist extends Component{
                             <ListItemSecondaryAction>
 
                             
-                            <IconButton >
-                                <Avatar className={classes.pink}>
+                            <IconButton     onClick = {() => this.removeItem(x)}>
+                                <Avatar className={classes.pink} >
                             <DeleteIcon ></DeleteIcon>
     
                             </Avatar>
@@ -146,14 +197,17 @@ class Todolist extends Component{
                         </List>
                     </div>
                         <div id = "final">
+
+                        <ThemeProvider theme={theme}>
                     <Button 
                             variant="contained"
                             color="secondary"
                             startIcon={<Done />}
-                            fullWidth = "true"
+                            fullWidth = {true}
                         >
                         Empezar
                  </Button >
+                 </ThemeProvider>
                  </div>
        
         </div>

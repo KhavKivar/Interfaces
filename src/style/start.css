@@ -22,9 +22,17 @@
 
 }
 #capaSup #capaInf #textFill{
-        
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
+}
+#capaSup #capaInf #listItem{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    
+}
+
+#capaSup #capaInf #final{
+    padding-bottom: 45px;
 }

@@ -23,6 +23,7 @@
     flex-direction:row;
     justify-content: space-around;
    display: flex;
+   height: 52px;
   
 }
 
@@ -30,13 +31,16 @@
     font-size: 6rem;    
     color: white;
     text-align: center;
-    margin-top: 140px;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
-#capaSup #termino p{
 
-    margin-bottom: 30px;
+#capaSup #termino p{
+    margin-top: 40px;
+    margin-bottom: 30px  ;
 }
+
+
 
 
 

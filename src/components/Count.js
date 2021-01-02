@@ -59,6 +59,13 @@ const styles = theme => ({
 
 
 
+var cont = 1500;
+var minutos25 = "25"
+var seconds25 = "00"
+var cont2 = 300;
+var minutos5 = "05"
+var seconds5 = "00"
+
 
 class Count extends Component{
     constructor(props){
@@ -67,9 +74,9 @@ class Count extends Component{
         this.terminoDescanso=this.terminoDescanso.bind(this);
 
         this.state = {
-            duracion:1500,
-            minutos:"25",
-            segundos:"00",
+            duracion:cont,
+            minutos:minutos25,
+            segundos:seconds25,
             rest:false,
             ciclo:0,
             finish:false
@@ -105,19 +112,21 @@ class Count extends Component{
     }
     terminoDescanso(){
       if(this.state.ciclo < 3){
-        this.setState({
-          rest:false,
-          duracion:1500,
-          minutos:"25",
-          segundos:"00",
-          ciclo:this.state.ciclo +1
-        })
-      }
-      if(this.state.ciclo === 3){
-        this.setState({
-          finish:true
-        })
-
+        if(this.state.ciclo === 2){
+          this.setState({
+            finish:true,
+            ciclo:3
+          })
+        }else{
+          this.setState({
+            rest:false,
+            duracion:cont,
+            minutos:minutos25,
+            segundos:seconds25,
+            ciclo:this.state.ciclo +1
+          })
+        }
+     
       }
     }
 
@@ -125,9 +134,9 @@ class Count extends Component{
     descanso(){
         this.setState({
           rest:true,
-          duracion:300,
-          minutos:"05",
-          segundos:"00",
+          duracion:cont2,
+          minutos:minutos5,
+          segundos:seconds5,
         })
   
     }
@@ -155,6 +164,8 @@ class Count extends Component{
 
         let code =    <div id="countdown">
                               <div id ="cajas">
+
+
                               {this.state.ciclo === 1 && 
                                 <Button className = {classes.pink} >
                                 <Check style={{ fontSize: 40 }} ></Check>
@@ -171,20 +182,7 @@ class Count extends Component{
                                       </>
                               }
                               
-                              { this.state.ciclo === 3 && 
-                                        <>
-                                        <Button className = {classes.pink} >
-                                        <Check style={{ fontSize: 40 }} ></Check>
-                                        </Button>
-                                        <Button className = {classes.pink} >
-                                        <Check style={{ fontSize: 40 }} ></Check>
-                                        </Button>
-                                          <Button className = {classes.pink} >
-                                      <Check style={{ fontSize: 40 }} ></Check>
-                                        </Button>
-                                        </>
-                                }
-                              
+                          
 
                               
                               
@@ -221,7 +219,20 @@ class Count extends Component{
           {this.state.finish ?
           
           <div id ="termino">
-              <p>Gracias!</p>
+             <div id ="cajas">
+                      <>
+                    <Button className = {classes.pink} >
+                    <Check style={{ fontSize: 40 }} ></Check>
+                    </Button>
+                    <Button className = {classes.pink} >
+                    <Check style={{ fontSize: 40 }} ></Check>
+                    </Button>
+                      <Button className = {classes.pink} >
+                  <Check style={{ fontSize: 40 }} ></Check>
+                    </Button>
+                    </>
+                    </div>
+          <p>Gracias!</p>
               <div id = "btn">
               <ThemeProvider theme={theme}>
               <Button href="/" fullWidth={true} style={{ fontSize: '27px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >

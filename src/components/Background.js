@@ -14,7 +14,7 @@ class Background extends Component{
                 <ChildCare fontSize="large">  </ChildCare>
                 </Grid>
                 <Grid item >
-                     <p> Pomodoro</p>
+                     <p><a href= "/"> Pomodoro </a></p>
                </Grid>
                </Grid>
             </div>

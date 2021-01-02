@@ -4,8 +4,48 @@
     margin-left: auto;
     margin-right: auto;
     border-bottom: solid;
+
   
 }
+#capaSup{
+    background-color: rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    height: auto;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    border-radius: 6px;
+    border-color: rgb(255, 255, 255);
+    border: 3px solid white;
+    padding-top: 60px;
+    
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:white;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
     
 #titulo p{

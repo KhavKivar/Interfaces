@@ -16,10 +16,15 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 
 import { Done,Add} from "@material-ui/icons";
-
+import { StylesProvider } from "@material-ui/core/styles";
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import IconButton from '@material-ui/core/IconButton';
 
+
+import PropTypes from "prop-types";
+
+
+import purple from "@material-ui/core/colors/purple";
 
 import { green} from '@material-ui/core/colors';
 
@@ -34,22 +39,21 @@ const styles = theme => ({
       display: 'flex',
       '& > *': {
         margin: theme.spacing(1),
-      },
+      }
+      
     },
+    
     pink: {
         '&:hover': {
-            backgroundColor: "#c51162",
+            backgroundColor: "white",
             color: '#FFF'
         },
-
       color: theme.palette.getContrastText("#f50057"),
-      backgroundColor: "#f50057",
-    },
-    green: {
-      color: '#fff',
-      backgroundColor: green[500],
+      backgroundColor: "white",
     },
   });
+
+
 
   const theme = createMuiTheme({
     typography: {
@@ -66,9 +70,26 @@ const styles = theme => ({
         'Fira Sans',
       ].join(','),
     },
+    palette: {
+      primary: {
+        main:  '#FFF',
+      },
+      secondary: {
+        main: green[500],
+      },
+    },
+
   });
 
 
+  const styleshy = {
+
+    largeIcon: {
+      width: 60,
+      height: 60,
+    },
+  
+  };
 
 
 
@@ -79,7 +100,7 @@ class Todolist extends Component{
         this.removeItem = this.removeItem.bind(this);
         this.state = {
             items:[],
-            text:""
+            text:"",
         };
 
     }
@@ -136,29 +157,35 @@ class Todolist extends Component{
         const {classes} = this.props;
         return(
 
-            <div id = "capaSup">
+           
                 <div id="capaInf">
                     <div id = "textFill">
+
+                    <ThemeProvider theme={theme}>
                             <TextField   onKeyDown={this._handleKeyDown} 
                              style = {{width: 430}}
                             name = "text"
                             value = {this.state.text}
                             onChange = {this.handleChange}
+
                             id="outlined-basic"
-                             label="Tarea" 
-                             variant="outlined"
-                            InputLabelProps = {{color:'secondary' }}
-        
+                            label= {this.state.text === "" ?  "Tarea" : ""}
+                            variant="outlined"
+                            InputLabelProps = {{
+                              style:{color:" #DB524D"},shrink: false }}
 
                              InputProps={{
-                                    style:{background:"white"},
+                                    style:{background:"white", color:"#DB524D"}
+                                   
                                 }}
                             />
+                            </ThemeProvider>
 
                        
-                                <Button style = {{marginLeft:3}} className = {classes.pink}  onClick = {this.addItem}>
-                             <Add  size = "medium"
-                                ></Add>
+                                <Button  
+                                style = {{marginLeft:3}} className = {classes.pink}  onClick = {this.addItem}>
+                                <Add  style={{ fontSize: 40 }} ></Add>
+                           
                              </Button>
                       
                          
@@ -172,7 +199,7 @@ class Todolist extends Component{
                             <ListItem   key = {x.key} disableGutters = {true}>
                             <ListItemAvatar>
                             <Avatar className={classes.pink}>
-                             <AssignmentIcon />
+                             <AssignmentIcon   style={{ color: "#DB524D" }}/>
 
                         </Avatar>
                             </ListItemAvatar>
@@ -184,38 +211,28 @@ class Todolist extends Component{
 
                             <ListItemSecondaryAction>
 
-                            
+                                <StylesProvider injectFirst>
                             <IconButton     onClick = {() => this.removeItem(x)}>
                                 <Avatar className={classes.pink} >
-                            <DeleteIcon ></DeleteIcon>
+                            <DeleteIcon style={{ color: "#DB524D" }} ></DeleteIcon>
     
                             </Avatar>
                             </IconButton>
+                            </StylesProvider>
+
                             </ListItemSecondaryAction>
                             </ListItem>,
                         )}
                         </List>
                     </div>
-                        <div id = "final">
-
-                        <ThemeProvider theme={theme}>
-                    <Button 
-                            variant="contained"
-                            color="secondary"
-                            startIcon={<Done />}
-                            fullWidth = {true}
-                        >
-                        Empezar
-                 </Button >
-                 </ThemeProvider>
-                 </div>
+                  
        
         </div>
         
 
    
 
-        </div>
+   
      
 
 

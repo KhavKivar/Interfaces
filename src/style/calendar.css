@@ -1,0 +1,10 @@
+#cal{
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction:column;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  
+}

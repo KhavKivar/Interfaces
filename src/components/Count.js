@@ -62,7 +62,7 @@ const styles = theme => ({
 var cont = 1500;
 var minutos25 = "25"
 var seconds25 = "00"
-var cont2 = 300;
+var cont2 = 309;
 var minutos5 = "05"
 var seconds5 = "00"
 

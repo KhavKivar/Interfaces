@@ -11,8 +11,8 @@
 
   
 }
-a:hover{
-    color: #DB524D;
+.fc-daygrid-day-number:hover{
+    color: #DB524D !important;
 }
 
 .fc .fc-button-primary{
@@ -24,11 +24,14 @@ a:hover{
 .fc .fc-button-primary:not(:disabled):active{
     background-color: red !important;
 }
-
-
-#capaSup h2{
-    color: #DB524D !important ;
+.jss2{
+    color:#DB524D ;
 }
+.fc .fc-toolbar-title{
+    color: #DB524D !important;
+}
+
+
 
 .fc .fc-button-primary:disabled{
     background-color: #DB524D;

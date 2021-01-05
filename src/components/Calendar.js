@@ -60,6 +60,7 @@ class Calendar extends Component {
         <div>
             <div id="cal">
                 <FullCalendar 
+                
                 aspectRatio="1.8" 
                 defaultView="dayGridMonth" 
                 plugins={[ dayGridPlugin ]} 

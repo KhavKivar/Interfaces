@@ -78,7 +78,7 @@ class Main extends Component{
 
         this.state = {
             start:false,
-            hist:false,
+            hist:false
         };
 
     }
@@ -86,7 +86,8 @@ class Main extends Component{
       const currentList = this.TodolistRef.current;
       if(currentList.state.items.length > 0){
         this.setState({
-          start:true
+          start:true,
+          
       })
 
       }
@@ -103,6 +104,7 @@ class Main extends Component{
           hist:true
         })
       }
+   
     }
 
     render(){
@@ -132,9 +134,13 @@ class Main extends Component{
                   </div>
                 </Fragment> : //si no, se muestra el contador, o el todolist
                 this.state.start ? <Count></Count>: <Todolist ref={this.TodolistRef}></Todolist>}
+
+
                     <div id = "final">
                     <ThemeProvider theme={theme}>
-                    {this.state.hist ? null :
+                    {this.state.hist || this.state.start ? null :
+
+
                       <Fragment>
                         <Button 
                       className = {classes.pink}

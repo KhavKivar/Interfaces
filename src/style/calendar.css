@@ -6,5 +6,41 @@
     height: auto;
     margin-top: 8px;
     margin-bottom: 8px;
+    background-color: white;
+    color: #DB524D !important;
+
   
+}
+a:hover{
+    color: #DB524D;
+}
+
+.fc .fc-button-primary{
+    background-color:#DB524D;
+}
+.fc .fc-button-primary:hover{
+    background-color: red;
+}
+.fc .fc-button-primary:not(:disabled):active{
+    background-color: red !important;
+}
+
+
+#capaSup h2{
+    color: #DB524D !important ;
+}
+
+.fc .fc-button-primary:disabled{
+    background-color: #DB524D;
+
+}
+
+a.fc-event:hover{
+    background-color:#fffadf;
+   
+}
+
+
+.fc-h-event:hover .fc-event-main{
+    color: #DB524D;
 }

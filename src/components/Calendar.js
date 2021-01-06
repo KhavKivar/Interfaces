@@ -1,4 +1,4 @@
-import { createMuiTheme, withStyles } from '@material-ui/core'
+import { withStyles } from '@material-ui/core'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import '../style/calendar.css';
@@ -22,37 +22,9 @@ const styles = theme => ({
     },
   });
 
-  const theme = createMuiTheme({
-    overrides: {
-        MuiButton: {
-            label: {
-                color: " #DB524D"
-              },
-        },
-      },
 
-
-    typography: {
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Oxygen',
-        'sans-serif',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-      ].join(','),
-    },
-  });
 
 class Calendar extends Component {
-    constructor(props){
-        super(props);
-
-    }
 
 
     render(){
@@ -62,21 +34,23 @@ class Calendar extends Component {
       let events = historial.map(function(item) {
         let pom = {
           id: id,
-          title: 'Pomodoro ('+Object.values(item)[0]+')',
+          title: 'Pomodoro ('+Object.values(item)[0]+' tareas)',
           start: Object.values(item)[1],
         }
         id = id + 1
         return pom  
       })
-      
-
+      console.log(events)
       return (
       <div>
           <div id="cal">
               <FullCalendar 
-              
-              aspectRatio="1.8" 
-              defaultView="dayGridMonth" 
+              editable={true}
+              selectable={true}
+              selectMirror={true}
+              dayMaxEvents={2}
+              moreLinkClick="popover"
+              aspectRatio="1.6 " 
               plugins={[ dayGridPlugin ]} 
               themeSystem="theme"
               firstDay="1"

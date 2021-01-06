@@ -20,12 +20,6 @@ import { StylesProvider } from "@material-ui/core/styles";
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import IconButton from '@material-ui/core/IconButton';
 
-
-import PropTypes from "prop-types";
-
-
-import purple from "@material-ui/core/colors/purple";
-
 import { green} from '@material-ui/core/colors';
 
 import {ThemeProvider } from "@material-ui/core";

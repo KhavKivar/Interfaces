@@ -1,14 +1,13 @@
 
 import './App.css';
 
-import ReactDOM, { Component } from "react";
+import { Component } from "react";
 
 import Main from './components/Main';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
@@ -32,10 +31,12 @@ class App extends Component {
     });
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); 
     let yyyy = today.getFullYear();
+    let hour = String(today.getHours()).padStart(2, '0');
+    let minutes = String(today.getMinutes()).padStart(2, '0')  
 
-    today = yyyy + '-' + mm + '-' + dd;
+    today = yyyy + '-' + mm + '-' + dd + 'T' + hour + ':' + minutes + ':00-04:00';
     let historial = []
 
     if(JSON.parse(localStorage.getItem("historial"))){
@@ -51,11 +52,11 @@ class App extends Component {
 
     return (
       <Router>
-        <switch>
+        <Switch>
             <Route exact path="/">
             <Main historial={this.state.historial} funcion={this.handleItems} ></Main>
             </Route>
-        </switch>
+        </Switch>
       </Router>
     );
   }

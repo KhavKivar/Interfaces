@@ -73,21 +73,25 @@ class Main extends Component{
         this.handle = this.handle.bind(this);
         this.handleHist = this.handleHist.bind(this);
 
-
         this.TodolistRef = React.createRef();
 
         this.state = {
             start:false,
-            hist:false
+            hist:false,
+            historial:[],
         };
 
     }
     handle(){
       const currentList = this.TodolistRef.current;
+
       if(currentList.state.items.length > 0){
+        const aux = this.state.historial
+        let aux2 = aux.concat(currentList.state.items)
+        this.props.funcion(currentList.state.items)
         this.setState({
           start:true,
-          
+          historial: aux2,
       })
 
       }

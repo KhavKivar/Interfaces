@@ -56,33 +56,36 @@ class Calendar extends Component {
 
 
     render(){
-        return (
-        <div>
-            <div id="cal">
-                <FullCalendar 
-                
-                aspectRatio="1.8" 
-                defaultView="dayGridMonth" 
-                plugins={[ dayGridPlugin ]} 
-                themeSystem="theme"
-                firstDay="1"
-                locale="esLocale"
-                events={[ //eventos dummy por el momento    
-                    {
-                      id: 'a',
-                      title: 'Pomodoro 1',
-                      start: '2021-01-01'
-                    },
-                    {
-                        id: 'b',
-                        title: 'Pomodoro 2',
-                        start: '2021-01-01'
-                    }
-                  ]}
-                />
-                
-            </div>
-        </div>
+
+      let historial = JSON.parse(localStorage.getItem("historial"))
+      let id = 0
+      let events = historial.map(function(item) {
+        let pom = {
+          id: id,
+          title: 'Pomodoro ('+Object.values(item)[0]+')',
+          start: Object.values(item)[1],
+        }
+        id = id + 1
+        return pom  
+      })
+      
+
+      return (
+      <div>
+          <div id="cal">
+              <FullCalendar 
+              
+              aspectRatio="1.8" 
+              defaultView="dayGridMonth" 
+              plugins={[ dayGridPlugin ]} 
+              themeSystem="theme"
+              firstDay="1"
+              locale="esLocale"
+              events={events}
+              />
+              
+          </div>
+      </div>
     )}
 }
 

@@ -178,7 +178,7 @@ class Count extends Component{
           text = "Tiempo de descanso"
         }
 
-        
+
 
         let code =  <div id="countdown">
                         <div style={{flexDirection: "row"}} id ="cajas">
@@ -218,18 +218,20 @@ class Count extends Component{
           <>
           {this.state.finish ?
           
-          <div id ="termino">
-             <div id ="cajas">
+          <div id ="countdown">
+             <div style={{flexDirection:"row"}} id ="cajas">
                 <>
-                  <Button className = {classes.pink} >
-                    <Check style={{ fontSize: 40 }} ></Check>
-                  </Button>
-                  <Button className = {classes.pink} >
-                    <Check style={{ fontSize: 40 }} ></Check>
-                  </Button>
-                  <Button className = {classes.pink} >
-                    <Check style={{ fontSize: 40 }} ></Check>
-                  </Button>
+                {this.state.tareasDone.map(item => 
+                          <>
+                            <div style={{flexDirection:"column"}}>
+                              <center style={{top: 100, marginBottom: "2px", color:"white"}} id="nombreTarea"> {item}</center>
+                              <Button style={{width: "25%"} } className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                            </div>
+                          </>
+                          ) 
+                          }
                 </>
               </div>
           <p>Gracias!</p>

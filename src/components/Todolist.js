@@ -161,17 +161,17 @@ class Todolist extends Component{
                             name = "text"
                             value = {this.state.text}
                             onChange = {this.handleChange}
-
+                            inputProps={{ maxLength: 14 }}
                             id="outlined-basic"
                             label= {this.state.text === "" ?  "Tarea" : ""}
                             variant="outlined"
                             InputLabelProps = {{
                               style:{color:" #DB524D"},shrink: false }}
 
-                             InputProps={{
-                                    style:{background:"white", color:"#DB524D"}
-                                   
-                                }}
+                            InputProps={{
+                                  style:{background:"white", color:"#DB524D"}
+                                  
+                              }}
                             />
                             </ThemeProvider>
 

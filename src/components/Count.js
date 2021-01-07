@@ -3,7 +3,8 @@ import React, { Component } from "react";
 
 import '../style/count.css';
 import { withStyles } from '@material-ui/core/styles';
-
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 import {ThemeProvider } from "@material-ui/core";
 
@@ -183,17 +184,20 @@ class Count extends Component{
         let code =  <div id="countdown">
                         <div style={{flexDirection: "row"}} id ="cajas">
                           
-                          {this.state.tareasDone.map(item => 
-                          <>
-                            <div style={{flexDirection:"column"}}>
-                              <center style={{top: 100, marginBottom: "2px", color:"white"}} id="nombreTarea"> {item}</center>
-                              <Button style={{width: "25%"} } className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                            </div>
-                          </>
-                          ) 
-                          }
+                        <Grid item xs={"auto"} zeroMinWidth={true}>
+                          <Grid container justify="center" spacing={10} wrap="nowrap">
+                            {this.state.tareasDone.map((value) => (
+                              <Grid key={value} item justify="center" styles={{paddingRight:"15px", paddingLeft:"15px"}}>
+                                <div align="center" style={{height:"auto"}}>
+                                  <div style={{top: 100, marginBottom: "2px", color:"white", fontSize:"16px"}}> {value}</div>
+                                  <Button style={{width: "25%", position:"center"} } className = {classes.pink} >
+                                    <Check style={{ fontSize: 40 }} ></Check>
+                                  </Button>
+                                </div>
+                              </Grid>
+                            ))}
+                          </Grid>
+                        </Grid>
  
                         </div>
                       <h2> {text}  </h2>
@@ -221,20 +225,23 @@ class Count extends Component{
           <div id ="countdown">
              <div style={{flexDirection:"row"}} id ="cajas">
                 <>
-                {this.state.tareasDone.map(item => 
-                          <>
-                            <div style={{flexDirection:"column"}}>
-                              <center style={{top: 100, marginBottom: "2px", color:"white"}} id="nombreTarea"> {item}</center>
-                              <Button style={{width: "25%"} } className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                            </div>
-                          </>
-                          ) 
-                          }
+                <Grid item xs={"auto"} zeroMinWidth={true}>
+                  <Grid container justify="center" spacing={10} wrap="nowrap">
+                    {this.state.tareasDone.map((value) => (
+                      <Grid key={value} item justify="center" styles={{paddingRight:"15px", paddingLeft:"15px"}}>
+                        <div align="center" style={{height:"auto"}}>
+                          <div style={{top: 100, marginBottom: "2px", color:"white", fontSize:"16px"}}> {value}</div>
+                          <Button style={{width: "25%", position:"center"} } className = {classes.pink} >
+                            <Check style={{ fontSize: 40 }} ></Check>
+                          </Button>
+                        </div>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Grid>
                 </>
               </div>
-          <p>Gracias!</p>
+          <p style={{marginTop:"60px"}}>Gracias!</p>
               <div id = "btn">
                 <ThemeProvider theme={theme}>
                 <Button href="/" fullWidth={true} style={{ fontSize: '27px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >

@@ -59,13 +59,12 @@ const styles = theme => ({
 
 
 
-var cont = 1500;
-var minutos25 = "25"
-var seconds25 = "00"
-var cont2 = 309;
-var minutos5 = "05"
-var seconds5 = "00"
-
+var cont = 3;
+var minutos25 = "00"
+var seconds25 = "03"
+var cont2 = 2;
+var minutos5 = "00"
+var seconds5 = "02"
 
 class Count extends Component{
     constructor(props){
@@ -79,7 +78,10 @@ class Count extends Component{
             segundos:seconds25,
             rest:false,
             ciclo:0,
-            finish:false
+            finish:false,
+            tareas:[],
+            tareasDone:[],
+            n:0,
         }
     }
 
@@ -106,16 +108,14 @@ class Count extends Component{
               segundos:seconds  
           })
       }
-   
-
-
     }
     terminoDescanso(){
-      if(this.state.ciclo < 3){
-        if(this.state.ciclo === 2){
+      if(this.state.ciclo <= this.state.n){
+        if(this.state.ciclo === (this.state.n - 1)){
+          let ultimo = this.state.n
           this.setState({
             finish:true,
-            ciclo:3
+            ciclo: ultimo,
           })
         }else{
           this.setState({
@@ -128,6 +128,13 @@ class Count extends Component{
         }
      
       }
+
+      let aux = this.state.tareas
+      let aux2 = this.state.tareasDone
+      aux2.push(aux.pop())
+      this.setState({
+        tareasDone: aux2, 
+      })
     }
 
 
@@ -143,15 +150,24 @@ class Count extends Component{
 
 
     componentDidMount() {
-        this.interval = setInterval(() => this.tick(), 1000);
-      }
-      componentWillUnmount() {
-        clearInterval(this.interval);
-      }
+      this.interval = setInterval(() => this.tick(), 1000);
+      const lista = this.props.tareas
+      const n = this.props.numTareas
+      this.setState({
+        tareas:lista,
+        n:n
+      })
+
+    }
+    componentWillUnmount() {
+      clearInterval(this.interval);
+    }
     
 
     render(){
+        
         const {classes} = this.props;
+
         let button;
         button = ""
         if(this.state.duracion === 0){
@@ -162,57 +178,70 @@ class Count extends Component{
           text = "Tiempo de descanso"
         }
 
-        let code =    <div id="countdown">
-                              <div id ="cajas">
-
-
-                              {this.state.ciclo === 1 && 
-                                <Button className = {classes.pink} >
+        let code =  <div id="countdown">
+                        <div id ="cajas">
+                          {this.state.ciclo === 1 && 
+                            <Button className = {classes.pink} >
+                              <Check style={{ fontSize: 40 }} ></Check>
+                            </Button>
+                          }
+                          { this.state.ciclo === 2  && 
+                            <>
+                              <Button className = {classes.pink} >
                                 <Check style={{ fontSize: 40 }} ></Check>
                               </Button>
-                              }
-                              { this.state.ciclo === 2  && 
-                                      <>
-                                      <Button className = {classes.pink} >
-                                      <Check style={{ fontSize: 40 }} ></Check>
-                                      </Button>
-                                      <Button className = {classes.pink} >
-                                      <Check style={{ fontSize: 40 }} ></Check>
-                                      </Button>
-                                      </>
-                              }
-                              
-                          
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                            </>
+                          }
+                          { this.state.ciclo === 3  && 
+                            <>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                            </>
+                          }
+                          { this.state.ciclo === 4  && 
+                            <>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                              <Button className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                            </>
+                          }
+                        </div>
+                      <h2> {text}  </h2>
+                      <p>{this.state.minutos}:{this.state.segundos}</p> 
+                        {button  !== "" && 
+                            <ThemeProvider theme={theme}>
+                              <div id= "btn">
 
-                              
-                              
-                          
-
+                                {this.state.rest ? <Button onClick = {this.terminoDescanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
+                                    Siguiente
+                                </Button>: 
+                                <Button onClick = {this.descanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
+                                Siguiente
+                                </Button>
+                                }
                               </div>
-
-
-                          <h2> {text}  </h2>
-                            <p>{this.state.minutos}:{this.state.segundos}</p> 
-
-                              {button  !== "" && 
-                                          <ThemeProvider theme={theme}>
-                                          <div id= "btn">
-
-                                        {this.state.rest ? <Button onClick = {this.terminoDescanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                            Siguiente
-                                        </Button>: 
-                                        <Button onClick = {this.descanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                        Siguiente
-                                    </Button>
-                                        
-                            }
-                                        
-                                        </div>
-                                        </ThemeProvider>
-                              }
-
-
-                          </div>
+                            </ThemeProvider>
+                        }
+                    </div>
         
         return(
           <>
@@ -220,27 +249,27 @@ class Count extends Component{
           
           <div id ="termino">
              <div id ="cajas">
-                      <>
-                    <Button className = {classes.pink} >
+                <>
+                  <Button className = {classes.pink} >
                     <Check style={{ fontSize: 40 }} ></Check>
-                    </Button>
-                    <Button className = {classes.pink} >
+                  </Button>
+                  <Button className = {classes.pink} >
                     <Check style={{ fontSize: 40 }} ></Check>
-                    </Button>
-                      <Button className = {classes.pink} >
-                  <Check style={{ fontSize: 40 }} ></Check>
-                    </Button>
-                    </>
-                    </div>
+                  </Button>
+                  <Button className = {classes.pink} >
+                    <Check style={{ fontSize: 40 }} ></Check>
+                  </Button>
+                </>
+              </div>
           <p>Gracias!</p>
               <div id = "btn">
-              <ThemeProvider theme={theme}>
-              <Button href="/" fullWidth={true} style={{ fontSize: '27px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >
-                      Inicio
-              </Button>
-              </ThemeProvider>
+                <ThemeProvider theme={theme}>
+                <Button href="/" fullWidth={true} style={{ fontSize: '27px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >
+                        Inicio
+                </Button>
+                </ThemeProvider>
               </div>
-          </div>:code}
+            </div>:code}
           </>
         )
     }

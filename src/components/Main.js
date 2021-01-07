@@ -79,6 +79,7 @@ class Main extends Component{
             start:false,
             hist:false,
             historial:[],
+            listaTareas:[],
         };
 
     }
@@ -92,6 +93,7 @@ class Main extends Component{
         this.setState({
           start:true,
           historial: aux2,
+          listaTareas: currentList.state.items,
       })
 
       }
@@ -137,7 +139,7 @@ class Main extends Component{
                     </Button > 
                   </div>
                 </Fragment> : //si no, se muestra el contador, o el todolist
-                this.state.start ? <Count></Count>: <Todolist ref={this.TodolistRef}></Todolist>}
+                this.state.start ? <Count tareas={this.state.listaTareas} numTareas={this.state.listaTareas.length}></Count>: <Todolist ref={this.TodolistRef}></Todolist>}
 
 
                     <div id = "final">

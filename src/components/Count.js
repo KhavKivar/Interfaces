@@ -178,52 +178,23 @@ class Count extends Component{
           text = "Tiempo de descanso"
         }
 
+        
+
         let code =  <div id="countdown">
-                        <div id ="cajas">
-                          {this.state.ciclo === 1 && 
-                            <Button className = {classes.pink} >
-                              <Check style={{ fontSize: 40 }} ></Check>
-                            </Button>
+                        <div style={{flexDirection: "row"}} id ="cajas">
+                          
+                          {this.state.tareasDone.map(item => 
+                          <>
+                            <div style={{flexDirection:"column"}}>
+                              <center style={{top: 100, marginBottom: "2px", color:"white"}} id="nombreTarea"> {item}</center>
+                              <Button style={{width: "25%"} } className = {classes.pink} >
+                                <Check style={{ fontSize: 40 }} ></Check>
+                              </Button>
+                            </div>
+                          </>
+                          ) 
                           }
-                          { this.state.ciclo === 2  && 
-                            <>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                            </>
-                          }
-                          { this.state.ciclo === 3  && 
-                            <>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                            </>
-                          }
-                          { this.state.ciclo === 4  && 
-                            <>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                              <Button className = {classes.pink} >
-                                <Check style={{ fontSize: 40 }} ></Check>
-                              </Button>
-                            </>
-                          }
+ 
                         </div>
                       <h2> {text}  </h2>
                       <p>{this.state.minutos}:{this.state.segundos}</p> 

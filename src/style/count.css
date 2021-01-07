@@ -3,7 +3,7 @@
     color: white;
     text-align: center;
     margin-bottom: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 #capaSup #countdown     p{font-size: 10rem;
     color: white;
@@ -40,9 +40,17 @@
     margin-bottom: 30px  ;
 }
 
+#capaSup #countdown #cajas    h4{font-size: 4px;
+    color: white;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 4px;
 
+    
 
-
+   
+}
 
 #capaSup #btn{
     

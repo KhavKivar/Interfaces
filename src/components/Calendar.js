@@ -31,7 +31,9 @@ class Calendar extends Component {
 
       let historial = JSON.parse(localStorage.getItem("historial"))
       let id = 0
-      let events = historial.map(function(item) {
+      var events
+      if(historial != null){
+       events = historial.map(function(item) {
         let pom = {
           id: id,
           title: 'Pomodoro ('+Object.values(item)[0]+' tareas)',
@@ -40,6 +42,9 @@ class Calendar extends Component {
         id = id + 1
         return pom  
       })
+    }else{
+      events = null
+    }
       console.log(events)
       return (
       <div>

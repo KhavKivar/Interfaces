@@ -123,7 +123,6 @@ class Todolist extends Component{
             text : this.state.text,
             items:L
         })
-       
 
     }
 
@@ -196,40 +195,25 @@ class Todolist extends Component{
                              <AssignmentIcon   style={{ color: "#DB524D" }}/>
 
                         </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText 
-                             disableTypography
+                      </ListItemAvatar>
+                      <ListItemText 
+                        disableTypography
                         primary={<Typography  type="body2" style={{  fontSize:"large", color: '#FFFFFF' }}>{x}</Typography>}
-                            />
-
-
-                            <ListItemSecondaryAction>
-
-                                <StylesProvider injectFirst>
-                            <IconButton     onClick = {() => this.removeItem(x)}>
-                                <Avatar className={classes.pink} >
-                            <DeleteIcon style={{ color: "#DB524D" }} ></DeleteIcon>
-    
+                      />
+                      <ListItemSecondaryAction>
+                        <StylesProvider injectFirst>
+                          <IconButton onClick = {() => this.removeItem(x)}>
+                            <Avatar className={classes.pink} >
+                              <DeleteIcon style={{ color: "#DB524D" }} ></DeleteIcon>
                             </Avatar>
-                            </IconButton>
-                            </StylesProvider>
-
-                            </ListItemSecondaryAction>
-                            </ListItem>,
-                        )}
-                        </List>
-                    </div>
-                  
-       
-        </div>
-        
-
-   
-
-   
-     
-
-
+                          </IconButton>
+                        </StylesProvider>
+                      </ListItemSecondaryAction>
+                      </ListItem>,
+                  )}
+                  </List>
+                </div>
+          </div>
         )
     }
 }

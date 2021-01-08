@@ -207,10 +207,10 @@ class Count extends Component{
                               <div id= "btn">
 
                                 {this.state.rest ? <Button onClick = {this.terminoDescanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                    Siguiente
+                                    Comenzar siguiente tarea
                                 </Button>: 
                                 <Button onClick = {this.descanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                Siguiente
+                                Comenzar descanso
                                 </Button>
                                 }
                               </div>

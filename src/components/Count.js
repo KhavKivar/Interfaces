@@ -206,11 +206,11 @@ class Count extends Component{
                             <ThemeProvider theme={theme}>
                               <div id= "btn">
 
-                                {this.state.rest ? <Button onClick = {this.terminoDescanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                    Siguiente
+                                {this.state.rest ? <Button onClick = {this.terminoDescanso} fullWidth={true} style={{ fontSize: '15px' }}  variant="contained"  className = {classes.pink} >
+                                    Comenzar siguiente tarea
                                 </Button>: 
-                                <Button onClick = {this.descanso} fullWidth={true} style={{ fontSize: '27px' }}  variant="contained"  className = {classes.pink} >
-                                Siguiente
+                                <Button onClick = {this.descanso} fullWidth={true} style={{ fontSize: '15px' }}  variant="contained"  className = {classes.pink} >
+                                Comenzar periodo de descanso
                                 </Button>
                                 }
                               </div>
@@ -241,10 +241,13 @@ class Count extends Component{
                 </Grid>
                 </>
               </div>
-          <p style={{marginTop:"60px"}}>Gracias!</p>
+
+              <div id = "end">
+          <p style={{marginTop:"60px"}}>Felicidades!</p>
+          </div>
               <div id = "btn">
                 <ThemeProvider theme={theme}>
-                <Button href="/" fullWidth={true} style={{ fontSize: '27px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >
+                <Button href="/" fullWidth={true} style={{ fontSize: '23px',backgroundColor:"white"}}  variant="contained"  className = {classes.pink} >
                         Inicio
                 </Button>
                 </ThemeProvider>

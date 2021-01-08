@@ -1,8 +1,10 @@
+
 import { withStyles } from '@material-ui/core'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import '../style/calendar.css';
 import React, { Component } from 'react'
+import SimpleModal from './modal.js'
 
 const styles = theme => ({
     root: {
@@ -25,6 +27,27 @@ const styles = theme => ({
 
 
 class Calendar extends Component {
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  
+    this.state = {
+        modalOpen:false,
+        lista:[]
+    };
+
+}   
+
+
+handleClick= (event,k) =>{
+  
+  console.log(event.event.classNames)
+  this.setState(
+    {modalOpen:!this.state.modalOpen,
+    lista:event.event.classNames
+    })
+    
+}
 
 
     render(){
@@ -33,11 +56,15 @@ class Calendar extends Component {
       let id = 0
       var events
       if(historial != null){
+
+      
        events = historial.map(function(item) {
         let pom = {
+
           id: id,
           title: 'Pomodoro ('+Object.values(item)[0]+' tareas)',
           start: Object.values(item)[1],
+          classNames:["asd"]
         }
         id = id + 1
         return pom  
@@ -61,10 +88,13 @@ class Calendar extends Component {
               firstDay="1"
               locale="esLocale"
               events={events}
-              />
-              
+              eventClick={this.handleClick}
+              />  
+            {this.state.modalOpen ? <SimpleModal lista={this.state.lista} modal = {true}></SimpleModal> : ""}
           </div>
       </div>
+
+
     )}
 }
 

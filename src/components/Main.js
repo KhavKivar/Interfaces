@@ -141,7 +141,6 @@ class Main extends Component{
                 </Fragment> : //si no, se muestra el contador, o el todolist
                 this.state.start ? <Count tareas={this.state.listaTareas} numTareas={this.state.listaTareas.length}></Count>: <Todolist ref={this.TodolistRef}></Todolist>}
 
-
                     <div id = "final">
                     <ThemeProvider theme={theme}>
                     {this.state.hist || this.state.start ? null :

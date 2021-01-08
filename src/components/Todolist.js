@@ -123,7 +123,6 @@ class Todolist extends Component{
             text : this.state.text,
             items:L
         })
-       
 
     }
 
@@ -151,85 +150,56 @@ class Todolist extends Component{
         const {classes} = this.props;
         return(
 
-           
-                <div id="capaInf">
-                    <div id = "textFill">
+          <div id="capaInf">
+            <div id = "textFill">
 
-                    <ThemeProvider theme={theme}>
-                            <TextField   onKeyDown={this._handleKeyDown} 
-                             style = {{width: 430}}
-                            name = "text"
-                            value = {this.state.text}
-                            onChange = {this.handleChange}
-                            inputProps={{ maxLength: 14 }}
-                            id="outlined-basic"
-                            label= {this.state.text === "" ?  "Tarea" : ""}
-                            variant="outlined"
-                            InputLabelProps = {{
-                              style:{color:" #DB524D"},shrink: false }}
-
-                            InputProps={{
-                                  style:{background:"white", color:"#DB524D"}
-                                  
-                              }}
-                            />
-                            </ThemeProvider>
-
-                       
-                                <Button  
-                                style = {{marginLeft:3}} className = {classes.pink}  onClick = {this.addItem}>
-                                <Add  style={{ fontSize: 40 }} ></Add>
-                           
-                             </Button>
-                      
-                         
-
-
-
-                    </div>
-                    <div id = "listItem">
-                        <List disablePadding = {true}>
-                        {this.state.items.map(x =>
-                            <ListItem   key = {x.key} disableGutters = {true}>
-                            <ListItemAvatar>
-                            <Avatar className={classes.pink}>
-                             <AssignmentIcon   style={{ color: "#DB524D" }}/>
-
+              <ThemeProvider theme={theme}>
+                <TextField   onKeyDown={this._handleKeyDown} 
+                style = {{width: 430}}
+                name = "text"
+                value = {this.state.text}
+                onChange = {this.handleChange}
+                inputProps={{ maxLength: 14 }}
+                id="outlined-basic"
+                label= {this.state.text === "" ?  "Tarea" : ""}
+                variant="outlined"
+                InputLabelProps = {{
+                  style:{color:" #DB524D"},shrink: false }}
+                InputProps={{
+                  style:{background:"white", color:"#DB524D"}}}
+                />
+              </ThemeProvider>
+              <Button style = {{marginLeft:3}} className = {classes.pink}  onClick = {this.addItem}>
+                <Add  style={{ fontSize: 40 }} ></Add>
+              </Button>
+            </div>
+                <div id = "listItem">
+                  <List disablePadding = {true}>
+                    {this.state.items.map(x =>
+                      <ListItem   key = {x.key} disableGutters = {true}>
+                      <ListItemAvatar>
+                        <Avatar className={classes.pink}>
+                          <AssignmentIcon   style={{ color: "#DB524D" }}/>
                         </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText 
-                             disableTypography
+                      </ListItemAvatar>
+                      <ListItemText 
+                        disableTypography
                         primary={<Typography  type="body2" style={{  fontSize:"large", color: '#FFFFFF' }}>{x}</Typography>}
-                            />
-
-
-                            <ListItemSecondaryAction>
-
-                                <StylesProvider injectFirst>
-                            <IconButton     onClick = {() => this.removeItem(x)}>
-                                <Avatar className={classes.pink} >
-                            <DeleteIcon style={{ color: "#DB524D" }} ></DeleteIcon>
-    
+                      />
+                      <ListItemSecondaryAction>
+                        <StylesProvider injectFirst>
+                          <IconButton onClick = {() => this.removeItem(x)}>
+                            <Avatar className={classes.pink} >
+                              <DeleteIcon style={{ color: "#DB524D" }} ></DeleteIcon>
                             </Avatar>
-                            </IconButton>
-                            </StylesProvider>
-
-                            </ListItemSecondaryAction>
-                            </ListItem>,
-                        )}
-                        </List>
-                    </div>
-                  
-       
-        </div>
-        
-
-   
-
-   
-     
-
-
+                          </IconButton>
+                        </StylesProvider>
+                      </ListItemSecondaryAction>
+                      </ListItem>,
+                  )}
+                  </List>
+                </div>
+          </div>
         )
     }
 }

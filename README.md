@@ -60,8 +60,8 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
     * Lograremos que Estudiante 1 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
 
   * Usuarios participantes 
-    * Persona: Estudiante 1
-    * Características demográficas: Tiene 13-18 años, debe organizar sus materias del colegio y tareas de la vida cotidiana.
+    * Persona: Cristobal Oporto [Estudiante 1]
+    * Características demográficas: Tiene 13-18 años, debe organizar sus materias del colegio y tareas de la vida cotidiana, usuario frecuente de aplicaciones web, conocimientoss basicos de ofimatica.
 * Descripción de tareas a realizar: 
   * Ingresar tareas que el usuario debe realizar al sistema, comenzar una sesión de pomodoro, avanzar a medida que se completa los tiempos destinados a realizar la tarea y a descansar para finalmente completar la sesión de pomodoro 
   * Ingresar a historial y ver sesiones de pomodoro completadas.
@@ -92,15 +92,22 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 ### Segundo experimento:
 * Definición:
   * Hipótesis por comprobar:
-    * 1
-    * 2
+    * Lograremos comprobar que la interfaz es intuitiva si el Estudiante 2 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+    * Lograremos que Estudiante 2 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
   * Usuarios participantes: 
-    * Persona:
-    * Características demográficas: 
+    * Persona: Juan Moraga [Estudiante 2]
+    * Características demográficas: Mayor que 18 años, estudiante institución de educación superior, usuario recurrente de redes sociales, conocimiento de ofimatica medio/avanzado.
 * Descripción de tareas a realizar:
+  * Ingresar tareas que el usuario debe realizar al sistema, comenzar una sesión de pomodoro, avanzar a medida que se completa los tiempos destinados a realizar la tarea y a descansar para finalmente completar la sesión de pomodoro
+
+
+
 * Prototipo:
 * Resultados: 
-  * Conclusiones respecto a cambios necesarios
+  * Conclusiones respecto a cambios necesarios:
+      * Luego de los cambios que se produjeron tras el experimento 1 podemos notar que varios problemas de interfaz fueron resueltos.
+      * Hipotesis 1 se cumple debido a que el usuario fue capaz de realizar las tareas que se le encomendaron con exito.
+      * Hipotesis 2 se ucmple debido a que el usuario fue capaz de realizar una sesión de pomodoro con exito, logrando el proposito de la aplicación web.
   * vídeo
 
 

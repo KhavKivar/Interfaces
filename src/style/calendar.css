@@ -31,7 +31,11 @@
     color: #DB524D !important;
 }
 
-
+#iz{
+    display: flex;
+    margin-left: auto;
+    padding-left: 340px;
+}
 
 .fc .fc-button-primary:disabled{
     background-color: #DB524D;

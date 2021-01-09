@@ -21,6 +21,10 @@ function getModalStyle() {
 }
 
 const styles = theme => ({
+  root: {
+    color: "#FFFFFF"
+  },
+
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
@@ -31,21 +35,27 @@ const styles = theme => ({
   },
 });
 
+
+const WhiteTextTypography = withStyles({
+  root: {
+    color: "#f50057"
+  }
+})(Typography)
+
+
 class SimpleModal extends React.Component {
     constructor(props){
         super(props);
         
         this.state = {
-            Open:props.modal,
+            Open:this.props.isOpen,
 
         };
         console.log("asd"+this.state.lista)
         
     }
 
-  handleClose = () => {
-    this.setState({ Open: false });
-  };
+ 
 
  
 
@@ -66,21 +76,29 @@ class SimpleModal extends React.Component {
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          open={this.state.Open}
-          onClose={this.handleClose}
+          open={this.props.isOpen}
+          onClose={this.props.onCloseModal}
         >
           <div style={getModalStyle()} className={classes.paper}>
-            <Typography variant="h6" id="modal-title">
+            <Typography color = "secondary"  variant="h6" id="modal-title">
               Tareas Realizadas
             </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
-                {
+       
+
+            <WhiteTextTypography variant="primary">
+            {
                 
-                  myComponent
-                
-                }
-            </Typography>
-            <SimpleModalWrapped />
+                myComponent
+              
+              }
+      </WhiteTextTypography>
+
+            <div id = "iz">
+            <Button onClick={this.props.onCloseModal} variant="primary">Cerrar</Button>
+
+
+            </div>
+          
           </div>
         </Modal>
       </div>

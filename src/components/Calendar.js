@@ -5,6 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import '../style/calendar.css';
 import React, { Component } from 'react'
 import SimpleModal from './modal.js'
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     root: {
@@ -30,7 +31,9 @@ class Calendar extends Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-  
+    this.handleCloseModal =this.handleCloseModal.bind(this);
+    this.modalRef = React.createRef();
+
     this.state = {
         modalOpen:false,
         lista:[]
@@ -43,11 +46,17 @@ handleClick= (event,k) =>{
   
   console.log(event.event.classNames)
   this.setState(
-    {modalOpen:!this.state.modalOpen,
+    {modalOpen:true,
     lista:event.event.classNames
     })
     
 }
+
+handleCloseModal = () => {
+  this.setState({ modalOpen: false });
+};
+
+
 
 
     render(){
@@ -90,7 +99,18 @@ handleClick= (event,k) =>{
               events={events}
               eventClick={this.handleClick}
               />  
-            {this.state.modalOpen ? <SimpleModal lista={this.state.lista} modal = {true}></SimpleModal> : ""}
+              <SimpleModal  onCloseModal={this.handleCloseModal} isOpen={this.state.modalOpen} ref ={this.modalRef} lista={this.state.lista} modal = {true}>
+            
+              
+
+
+
+                </SimpleModal>;
+               
+               
+                
+
+              
           </div>
       </div>
 

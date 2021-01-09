@@ -244,6 +244,7 @@ class Count extends Component{
 
               <div id = "end">
           <p style={{marginTop:"60px"}}>Felicidades!</p>
+          <p style={{fontSize:"25px"}}>Finalizaste una sesión de trabajo. Puedes revisar tus tareas en el historial.</p>
           </div>
               <div id = "btn">
                 <ThemeProvider theme={theme}>

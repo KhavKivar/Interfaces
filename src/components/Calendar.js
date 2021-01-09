@@ -36,7 +36,8 @@ class Calendar extends Component {
 
     this.state = {
         modalOpen:false,
-        lista:[]
+        lista:[],
+        npom: 0,
     };
 
 }   
@@ -47,7 +48,8 @@ handleClick= (event,k) =>{
   console.log(event.event.classNames)
   this.setState(
     {modalOpen:true,
-    lista:event.event.classNames
+    lista:event.event.classNames,
+    npom: event.event.id
     })
     
 }
@@ -62,7 +64,7 @@ handleCloseModal = () => {
     render(){
 
       let historial = JSON.parse(localStorage.getItem("historial"))
-      let id = 0
+      let id = 1
       var events
       if(historial != null){
 
@@ -71,9 +73,9 @@ handleCloseModal = () => {
         let pom = {
 
           id: id,
-          title: 'Pomodoro ('+Object.values(item)[0]+' tareas)',
+          title: 'Pomodoro'+id,
           start: Object.values(item)[1],
-          classNames:["asd"]
+          classNames: Object.values(item)[0]   
         }
         id = id + 1
         return pom  
@@ -99,7 +101,7 @@ handleCloseModal = () => {
               events={events}
               eventClick={this.handleClick}
               />  
-              <SimpleModal  onCloseModal={this.handleCloseModal} isOpen={this.state.modalOpen} ref ={this.modalRef} lista={this.state.lista} modal = {true}>
+              <SimpleModal  onCloseModal={this.handleCloseModal} isOpen={this.state.modalOpen} ref ={this.modalRef} lista={this.state.lista} nPom={this.state.npom} modal = {true}>
             
               
 

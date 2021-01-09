@@ -41,10 +41,10 @@ class App extends Component {
 
     if(JSON.parse(localStorage.getItem("historial"))){
       historial = JSON.parse(localStorage.getItem("historial"))
-      let acumulado = historial.concat([[aux2.length, today]])
+      let acumulado = historial.concat([[aux2, today]])
       localStorage.setItem("historial", JSON.stringify(acumulado))
     } else {
-      localStorage.setItem("historial", JSON.stringify([[aux2.length, today]]))
+      localStorage.setItem("historial", JSON.stringify([[aux2, today]]))
     }
   }
   

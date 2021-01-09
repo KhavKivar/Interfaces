@@ -63,10 +63,10 @@ class SimpleModal extends React.Component {
     const { classes } = this.props;
     const { x } = this.props;
 
-
+    let numpom = this.props.nPom
     let myComponent;
     if(this.props.lista != null){
-      myComponent =   this.props.lista.map(x=><p>{x}</p>);
+      myComponent =   this.props.lista.map(x=><li>{x}</li>);
     }else{
       myComponent = ""
     }
@@ -81,15 +81,15 @@ class SimpleModal extends React.Component {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography color = "secondary"  variant="h6" id="modal-title">
-              Tareas Realizadas
+              Pomodoro {numpom}
             </Typography>
        
 
             <WhiteTextTypography variant="primary">
             {
-                
-                myComponent
-              
+              <ul>
+                {myComponent}
+              </ul>
               }
       </WhiteTextTypography>
 

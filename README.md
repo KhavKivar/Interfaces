@@ -54,11 +54,14 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 
 ### Primer experimento:
 * Definición:
-  * Hipótesis por comprobar: Lograremos comprobar que la interfaz es intuitiva si el Estudiante 1 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+  * Hipótesis por comprobar: 
+    * Lograremos comprobar que la interfaz es intuitiva si el Estudiante 1 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+    * Lograremos ver el progreso del uso de las sesiones pomodoro si el Estudiante 1 completa sesiones de pomodoro y luego las visualiza con la opción 'Ver Historial'.
+    * Lograremos que Estudiante 1 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
 
   * Usuarios participantes 
-    * Persona: Estudiante 1
-    * Características demográficas: Tiene 13-18 años, debe organizar sus materias del colegio y tareas de la vida cotidiana.
+    * Persona: Cristobal Oporto [Estudiante 1]
+    * Características demográficas: Tiene 13-18 años, debe organizar sus materias del colegio y tareas de la vida cotidiana, usuario frecuente de aplicaciones web, conocimientoss basicos de ofimatica.
 * Descripción de tareas a realizar: 
   * Ingresar tareas que el usuario debe realizar al sistema, comenzar una sesión de pomodoro, avanzar a medida que se completa los tiempos destinados a realizar la tarea y a descansar para finalmente completar la sesión de pomodoro 
   * Ingresar a historial y ver sesiones de pomodoro completadas.
@@ -76,10 +79,12 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 
 * Resultados: 
   * Conclusiones respecto a cambios necesarios:
-    * Agregar instrucciones sobre donde agregar tareas
-    * Hacer que el botón para agregar tareas sea más intuitivo debido a que puede ser confundido con el resto de botones (como lo que le paso al Estudiante 1 en el video)
-    * Cambiar texto de botones para que exista claridad en el progreso del usuario usando la aplicación
+    * Agregar instrucciones sobre donde agregar tareas, es indicio de que nuestra hipotesis 1 falló.
+    * Hacer que el botón para agregar tareas sea más intuitivo debido a que puede ser confundido con el resto de botones (como lo que le paso al Estudiante 1 en el video) (falla hipotesis 1)
+    * Cambiar texto de botones para que exista claridad en el progreso del usuario usando la aplicación. (falla hipotesis 1)
     * Cambiar mensaje final a algo más claro (por ejemplo. Felicidades! Ahora puedes ver el detalle de tu sesión de pomodoro en el historial) con el fin de que el usuario sepa que puede hacer al haber completado una sesión de pomodoro.
+    * Agregar más detalles de las sesiones de pomodoro en el historial. (Se cumple la hipotesis 2 aunque es mejor que el usuario pueda ver el detalle de las sesiones realizadas)
+    * La hipotesis 3 se cumple debido a que Estudiante 1 es capaz de realizar una sesión de pomodoro logrando organizarse con distintas tareas que debía realizar. 
   * Vídeo: https://drive.google.com/file/d/1hYWLEp9t7SevSpZ-KalGGT4GEMALIZmo/view?usp=sharing
 
 
@@ -87,9 +92,30 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 ### Segundo experimento:
 * Definición:
   * Hipótesis por comprobar:
-  * Usuarios participantes, Persona, número, características demográficas:
+    * Lograremos comprobar que la interfaz es intuitiva si el Estudiante 2 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+    * Lograremos que Estudiante 2 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
+  * Usuarios participantes: 
+    * Persona: Juan Moraga [Estudiante 2]
+    * Características demográficas: Mayor que 18 años, estudiante institución de educación superior, usuario recurrente de redes sociales, conocimiento de ofimatica medio/avanzado.
 * Descripción de tareas a realizar:
+  * Ingresar tareas que el usuario debe realizar al sistema, comenzar una sesión de pomodoro, avanzar a medida que se completa los tiempos destinados a realizar la tarea y a descansar para finalmente completar la sesión de pomodoro
+
+
+
 * Prototipo:
 * Resultados: 
-  * Conclusiones respecto a cambios necesarios
+  * Conclusiones respecto a cambios necesarios:
+      * Luego de los cambios que se produjeron tras el experimento 1 podemos notar que varios problemas de interfaz fueron resueltos.
+      * Hipotesis 1 se cumple debido a que el usuario fue capaz de realizar las tareas que se le encomendaron con exito.
+      * Hipotesis 2 se ucmple debido a que el usuario fue capaz de realizar una sesión de pomodoro con exito, logrando el proposito de la aplicación web.
   * vídeo
+
+
+
+
+
+### Anexo de Uso de Gitlab
+
+![qq](./ss/git3.png)
+![qq](./ss/git2.png)
+![qq](./ss/git1.png)

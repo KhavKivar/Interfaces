@@ -79,11 +79,12 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 
 * Resultados: 
   * Conclusiones respecto a cambios necesarios:
-    * Agregar instrucciones sobre donde agregar tareas
-    * Hacer que el botón para agregar tareas sea más intuitivo debido a que puede ser confundido con el resto de botones (como lo que le paso al Estudiante 1 en el video)
-    * Cambiar texto de botones para que exista claridad en el progreso del usuario usando la aplicación
+    * Agregar instrucciones sobre donde agregar tareas, es indicio de que nuestra hipotesis 1 falló.
+    * Hacer que el botón para agregar tareas sea más intuitivo debido a que puede ser confundido con el resto de botones (como lo que le paso al Estudiante 1 en el video) (falla hipotesis 1)
+    * Cambiar texto de botones para que exista claridad en el progreso del usuario usando la aplicación. (falla hipotesis 1)
     * Cambiar mensaje final a algo más claro (por ejemplo. Felicidades! Ahora puedes ver el detalle de tu sesión de pomodoro en el historial) con el fin de que el usuario sepa que puede hacer al haber completado una sesión de pomodoro.
-    * Agregar más detalles de las sesiones de pomodoro en el historial.
+    * Agregar más detalles de las sesiones de pomodoro en el historial. (Se cumple la hipotesis 2 aunque es mejor que el usuario pueda ver el detalle de las sesiones realizadas)
+    * La hipotesis 3 se cumple debido a que Estudiante 1 es capaz de realizar una sesión de pomodoro logrando organizarse con distintas tareas que debía realizar. 
   * Vídeo: https://drive.google.com/file/d/1hYWLEp9t7SevSpZ-KalGGT4GEMALIZmo/view?usp=sharing
 
 
@@ -91,9 +92,23 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 ### Segundo experimento:
 * Definición:
   * Hipótesis por comprobar:
-  * Usuarios participantes, Persona, número, características demográficas:
+    * 1
+    * 2
+  * Usuarios participantes: 
+    * Persona:
+    * Características demográficas: 
 * Descripción de tareas a realizar:
 * Prototipo:
 * Resultados: 
   * Conclusiones respecto a cambios necesarios
   * vídeo
+
+
+
+
+
+### Anexo de Uso de Gitlab
+
+![qq](./ss/git3.png)
+![qq](./ss/git2.png)
+![qq](./ss/git1.png)

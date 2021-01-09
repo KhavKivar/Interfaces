@@ -51,6 +51,8 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 * Botones. La navegación por la aplicación se hace mediante el uso de botones.
 * Color. A lo largo de todo el uso de la aplicación se utiliza el mismo esquema de colores.
 * Diálogo. Cuando se selecciona una sesión en el calendario, se despliega un diálogo con la lista detallada de las tareas que realizó en esa sesión.
+* Íconos. Tanto en los botones de navegación, como en la lista de tareas, se agregaron íconos para referenciar y hacer las acciones un tanto más intuitivas (como eliminar, agregar, calendario, tareas listas, etc.)
+
 
 ### Primer experimento:
 * Definición:

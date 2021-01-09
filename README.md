@@ -85,7 +85,7 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
     * Cambiar mensaje final a algo más claro (por ejemplo. Felicidades! Ahora puedes ver el detalle de tu sesión de pomodoro en el historial) con el fin de que el usuario sepa que puede hacer al haber completado una sesión de pomodoro.
     * Agregar más detalles de las sesiones de pomodoro en el historial. (Se cumple la hipotesis 2 aunque es mejor que el usuario pueda ver el detalle de las sesiones realizadas)
     * La hipotesis 3 se cumple debido a que Estudiante 1 es capaz de realizar una sesión de pomodoro logrando organizarse con distintas tareas que debía realizar. 
-  * Vídeo: https://drive.google.com/file/d/1hYWLEp9t7SevSpZ-KalGGT4GEMALIZmo/view?usp=sharing
+  * Link al [vídeo](https://drive.google.com/file/d/1hYWLEp9t7SevSpZ-KalGGT4GEMALIZmo/view?usp=sharing) 
 
 
 
@@ -96,26 +96,33 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
     * Lograremos que Estudiante 2 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
   * Usuarios participantes: 
     * Persona: Juan Moraga [Estudiante 2]
-    * Características demográficas: Mayor que 18 años, estudiante institución de educación superior, usuario recurrente de redes sociales, conocimiento de ofimatica medio/avanzado.
+    * Características demográficas: Adulto de 28 años, estudiante institución de educación superior actualmente cursa post-grado, usuario recurrente de redes sociales, conocimiento de ofimatica avanzado.
 * Descripción de tareas a realizar:
   * Ingresar tareas que el usuario debe realizar al sistema, comenzar una sesión de pomodoro, avanzar a medida que se completa los tiempos destinados a realizar la tarea y a descansar para finalmente completar la sesión de pomodoro
-
-
-
+  * Ingresar a historial y ver sesiones de pomodoro completadas.
 * Prototipo:
+  ![](./ss/10.png)
+  ![](./ss/11.png)
+  ![](./ss/12.png)
+  ![](./ss/13.png)
+  ![](./ss/14.png)
+  ![](./ss/15.png)
 * Resultados: 
   * Conclusiones respecto a cambios necesarios:
       * Luego de los cambios que se produjeron tras el experimento 1 podemos notar que varios problemas de interfaz fueron resueltos.
       * Hipotesis 1 se cumple debido a que el usuario fue capaz de realizar las tareas que se le encomendaron con exito.
       * Hipotesis 2 se ucmple debido a que el usuario fue capaz de realizar una sesión de pomodoro con exito, logrando el proposito de la aplicación web.
-  * vídeo
+      * Se produjo un error en la vista del calendario, por un problema de zona horaria al momento de mostrar los pomodoros hechos, se mostraba en el calendario de forma que el "evento" en el calendario pertenecía a dos días en vez de uno. Sin embargo, como se puede apreciar en los últimos dos screenshots el prototipo soluciona la problemática del experimento 1 y es capaz de mostrar de forma sencilla y clara.
+      * Comentario feedback del usuario: "Podría ser una buena implementación la posibilidad de que en caso de que una tarea me tome menos de 25 minutos, terminarla para pasar al descanso y ahorrar tiempo, además de ver en el detalle final del historial los minutos que me tomó efectivamente realizar la tarea"
+  * Link al [vídeo](https://drive.google.com/file/d/1evc1ZRpTqu0xu_TTiMhaM7KlolmmKkPK/view?usp=sharing)
 
 
 
 
 
-### Anexo de Uso de Gitlab
+### Anexo de Uso de GitHub
+* Repositorio [Github](https://github.com/KhavKivar/Interfaces)
 
 ![qq](./ss/git3.png)
-![qq](./ss/git2.png)
-![qq](./ss/git1.png)
+![](ss/git2.png)
+![](ss/git1.png)

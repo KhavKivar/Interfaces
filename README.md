@@ -54,7 +54,10 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
 
 ### Primer experimento:
 * Definición:
-  * Hipótesis por comprobar: Lograremos comprobar que la interfaz es intuitiva si el Estudiante 1 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+  * Hipótesis por comprobar: 
+    * Lograremos comprobar que la interfaz es intuitiva si el Estudiante 1 puede lograr usar el sistema sin equivocarse con la función de crear nueva sesión de pomodoro.
+    * Lograremos ver el progreso del uso de las sesiones pomodoro si el Estudiante 1 completa sesiones de pomodoro y luego las visualiza con la opción 'Ver Historial'.
+    * Lograremos que Estudiante 1 pueda organizarse con sus tareas si este puede lograr agregar sus tareas al sistema y seguir la técnica pomodoro con la función 'Empezar sesión de pomodoro' disponible en el sistema.
 
   * Usuarios participantes 
     * Persona: Estudiante 1
@@ -80,6 +83,7 @@ Pomodoro - productividad: la técnica pomodoro logra optimizar el tiempo y la ef
     * Hacer que el botón para agregar tareas sea más intuitivo debido a que puede ser confundido con el resto de botones (como lo que le paso al Estudiante 1 en el video)
     * Cambiar texto de botones para que exista claridad en el progreso del usuario usando la aplicación
     * Cambiar mensaje final a algo más claro (por ejemplo. Felicidades! Ahora puedes ver el detalle de tu sesión de pomodoro en el historial) con el fin de que el usuario sepa que puede hacer al haber completado una sesión de pomodoro.
+    * Agregar más detalles de las sesiones de pomodoro en el historial.
   * Vídeo: https://drive.google.com/file/d/1hYWLEp9t7SevSpZ-KalGGT4GEMALIZmo/view?usp=sharing
 
 
